@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Mf extends Controller 
+class Controller_cStock extends Controller 
 {
 	public function action_index()
 	{
