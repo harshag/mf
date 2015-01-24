@@ -1,0 +1,28 @@
+<!doctype>
+<html>
+	<head>
+	<title>MF</title>
+	<script src="jquery.js"></script>
+	</head>
+	<body>
+		<div id="mf-data">
+			<table id="mf-table">
+				
+			</table>
+		</div>
+	</body>
+	
+	<script>
+		$(document).ready(function(){
+			$.get('http://localhost/kohana/index.php/mf', function(response){
+				var tableData ='<tr><th>Fund Name</th><th>Qty</th><th>NAV</th><th>Value</th></tr>';
+				tableData += '<tr><td>' + response.Fund + '</td>';
+				tableData += '<td>' + response.Qty + '</td>';
+				tableData += '<td>' + response.NAV + '</td>';
+				tableData += '<td>' + response.Value + '</td></tr>';
+				console.log(response);
+				$('#mf-table').html(tableData);
+			});
+		});
+	</script>
+</html>
